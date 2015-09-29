@@ -456,11 +456,13 @@
 \newcommand{\anno}{}
 \newcounter{week}
 \newcounter{monday}
+\newboolean{fstwk}\setboolean{fstwk}{true}
 \newcounter{task}
 \newcommand{\annee}[1]{\renewcommand{\anno}{#1}}
-\newcommand{\mois}[2]{\setcounter{week}{1}\renewcommand{\mese}{#1}\setcounter{monday}{#2}\section{#1 \anno{}}}
+\newcommand{\mois}[2]{\clearpage\setboolean{fstwk}{true}\setcounter{week}{1}\renewcommand{\mese}{#1}\setcounter{monday}{#2}\section{#1 \anno{}}}
 \newcommand{\sautersemaine}{\stepcounter{week}\stepcounter{monday}\stepcounter{monday}\stepcounter{monday}\stepcounter{monday}\stepcounter{monday}\stepcounter{monday}\stepcounter{monday}}
-\newcommand{\semaine}{\setcounter{task}{0}\subsection{Semaine \arabic{week}}
+\newcommand{\semaine}{\ifthenelse{\boolean{fstwk}}{}{\clearpage}\setboolean{fstwk}{false}
+\setcounter{task}{0}\subsection{Semaine \arabic{week}}
 
 \begin{center}
 \Flash{Pour la réunion de la semaine du \arabic{monday} \MakeLowercase{\mese{}} \anno{}.}
@@ -469,13 +471,13 @@
 
 \newcommand{\sep}{\noindent\hspace*{\fill}{\color{bleu303}\rule{0.5\textwidth}{0.3mm}}\hspace*{\fill}\vspace*{-3mm}}
 \newcommand{\obj}[1]{\paragraph*{\itshape\bfseries\color{bleu303} Résumé de l'objectif. } {\itshape #1}}
-\newcommand{\task}[2]{\sep\stepcounter{task}
+\newcommand{\task}[2][NON ENCORE ATTRIBU\'EE]{\sep\stepcounter{task}
 
-    \begin{center} {\bfseries\color{bleu303} Tâche \arabic{task}} \end{center}
+    \begin{center} {\bfseries\color{bleu303} Tâche \arabic{task}}\vspace*{-2mm} \end{center}
 
     \hspace*{\fill}\begin{minipage}{0.5\textwidth}
     \begin{flushright}
-    {\itshape\color{rouge485} -- #1}
+    {\itshape\color{rouge485} -- #1}\vspace*{3mm}
     \end{flushright}
     \end{minipage}
 
