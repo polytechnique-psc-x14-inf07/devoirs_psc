@@ -430,30 +430,28 @@
 }
 
 
-\newcounter{question}
-\newcommand{\ask}[2][Un connard d'anonyme]{
-    
-    \noindent\textcolor{bleu303}{\rule{0.5\textwidth}{0.3mm}}\vspace*{-5mm}
-    \stepcounter{question}
-    \paragraph{\itshape\color{bleu303} Question \arabic{question}. } {\itshape #2}
+\newcommand{\pie}{Pierrick}
+\newcommand{\longpie}{\pie \textsc{Allègre}}
+\newcommand{\gus}{Gustavo}
+\newcommand{\longgus}{\gus \textsc{Castro}}
+\newcommand{\cle}{Clément}
+\newcommand{\longcle}{\cle \textsc{Durand}}
+\newcommand{\fel}{Felipe}
+\newcommand{\longfel}{\fel \textsc{Garcia}}
+\newcommand{\ale}{Alexandre}
+\newcommand{\longale}{\ale \textsc{Harry}}
+\newcommand{\fra}{Francisco}
+\newcommand{\longfra}{\fra \textsc{Ribeiro Eckhardt Serpa}}
+\newcommand{\pal}{Pierre-Alexandre}
+\newcommand{\longpal}{\pal \textsc{Thomas}}
+\newcommand{\gui}{Guillaume}
+\newcommand{\longgui}{\gui \textsc{Vizier}}
 
-    {\hspace{\fill} \color{rouge485}\itshape -- #1}
+\newcommand{\acc}[1]{{\color{bleu303} #1}}
+\newcommand{\Acc}[1]{\acc{\emph{#1}}}
+\newcommand{\flash}[1]{{\color{rouge485} #1}}
+\newcommand{\Flash}[1]{\flash{\bfseries\emph{#1}}}
 
-}
-% mon ask perso
-\newcommand{\askc}[1]{\ask[Clément]{#1}}
-\newcommand{\askg}[1]{\ask[Guillaume]{#1}}
-
-\newcommand{\answer}[2][ta maman]{
-    
-    \begin{flushright}
-    \begin{minipage}{0.75\textwidth}
-    \setlength{\parindent}{0cm}
-    \paragraph{\color{bleu303} Réponse de #1: } #2
-    \end{minipage}
-    \end{flushright}
-
-}
 
 \endinput
 
