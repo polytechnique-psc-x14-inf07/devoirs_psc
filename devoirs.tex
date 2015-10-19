@@ -9,8 +9,7 @@
 \usepackage{enumitem}
 \usepackage{multicol}
 \usepackage{polytechnique}
-\usepackage[pdftex=true,
-			colorlinks=true,
+\usepackage[colorlinks=true,
 			linkcolor=black,
 			filecolor=red,
 			urlcolor=blue,
@@ -81,7 +80,7 @@
 		
 		\semaine
 		
-		\obj{Envoyer et recevoir des paquets à partir d'un bout de code en $C$ par exemple.}
+		\obj{Envoyer et recevoir des paquets à partir d'un bout de code, en $C$ par exemple.}
 		
 		\task[tout le groupe]{
 		Pour les protocoles qui sont attribués, il s'agit d'écrire et exécuter un morceau de code qui permet d'envoyer ou de recevoir un paquet avec chacun de ces protocoles.
@@ -97,12 +96,18 @@
 		\end{description}
 		}
 		
+		\task[tout le groupe]{
+		Installer \verb!git! (sous linux) ou \verb!SmartGit! (sous Windows). Configurer le proxy dans le programme. Configurer vos serveurs \verb!dns! dans la configuration réseau : serveur principal \verb!heol! (129.104.201.53), serveur secondaire \verb!frankiz! (129.104.201.51). Cela pourra être utile.
+		}
+		
+		\Acc{Pensez à apporter vos ordis avec c\^ables éthernet.}
+		
 		
 		\semaine
 		
 		\obj{Utiliser WireShark pour collecter des données (à exploiter ensuite), et coder un sniffer.}
 		
-		\task[tout le groupe]{Chaque fois que vous êtes connectés au réseau Wi-Fi \verb!polytechnique!, utiliser WireShark pour écouter le réseau, et stocker toutes ces données. Pour chaque fichier, renommer le fichier de la façon suivante :
+		\task[tout le groupe]{Chaque fois que vous êtes connectés au réseau Wi-Fi, utiliser WireShark pour écouter le réseau, et stocker toutes ces données. Pour chaque fichier, renommer le fichier de la façon suivante :
 		
 		\begin{center}
 		\verb!<mois><jour>-<heure de debut>-<heure de fin>.out!
@@ -115,8 +120,12 @@
 		\end{center}
 		}
 		
-		\task{
-		Coder un logiciel d'écoute de type WireShark permettant de \og capturer \fg{} les paquets échangés sur un réseau Wi-Fi. Le but est de les récupérer sous forme \og brute \fg{}.
+		\task[\pie,\pal,\ale,\fra,\gus]{
+		Coder (en python par exemple) un logiciel d'écoute de type WireShark permettant de \og capturer \fg{} les paquets échangés sur un réseau Wi-Fi. Le but est de les récupérer sous forme \og brute \fg{}.
+		}
+		
+		\task[\cle,\gui]{
+		Travailler sur le logiciel \verb!ettercap! et voir ce que l'on peut faire avec.
 		}
 		
 	\mois{Novembre}2
