@@ -1,0 +1,12 @@
+DNS poisonning : comment s'en protéger ?
+_traceroute : 
+    - lancer une traceroute pour tracer le chemin vers la réponse de la requête DNS
+    - lancer la même traceroute à partir d'un autre utilisateur
+_dig -X : 
+    _requête DNS inverse => faire attention aux programmes qui stockent les infos filées à qui quand et qui répond à la place de la requête
+    _vérifier par un utilisateur autre => vérifier qu'il n'est pas sur le même réseau (pas le même pays ? géolocalisation ?)
+        - constituer un réseau d'utilisateurs dans différents pays (réseau de l'X ?)
+_DNSSEC : 
+    _à installer sur les sites web, ainsi que sur les serveurs DNS
+    _pb : côté utilisateur, on peut rien faire...
+    
