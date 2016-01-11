@@ -10,21 +10,21 @@
 \usepackage{multicol}
 \usepackage{polytechnique}
 \usepackage[colorlinks=true,
-			linkcolor=black,
-			filecolor=red,
-			urlcolor=blue,
-			bookmarks=true,
-			bookmarksopen=true]{hyperref}
+            linkcolor=black,
+            filecolor=red,
+            urlcolor=blue,
+            bookmarks=true,
+            bookmarksopen=true]{hyperref}
 
 \title{Travail à faire}
 \author{\longpie \\
-		\longgus \\
-		\longcle \\
-		\longfel \\
-		\longale \\
-		\longfra \\
-		\longpal \\
-		\longgui}
+        \longgus \\
+        \longcle \\
+        \longfel \\
+        \longale \\
+        \longfra \\
+        \longpal \\
+        \longgui}
 \subtitle{Projet Scientifique Collectif}
 \date{\today}
 
@@ -35,156 +35,179 @@
 
 %================DEBUT DOCUMENT=====================
 \annee{2015}
-	\mois{Octobre}5
-		\semaine
-		
-		\obj{Chaque personne devra étudier un protocole, et préparer de quoi le présenter au reste du groupe. On préparera aussi l'utilisation de git.}
-		
-		\task[tout le groupe]{
-		\begin{itemize}
-			\item \'Etudier le protocole qui a été attribué.
-			\item Rédiger une fiche \Acc{courte mais complète} expliquant les points importants du protocole.
-			\item Présenter le protocole au groupe. Tous les moyens sont bons (tableau, diaporama, etc.), mais cela ne sert à rien de faire quelque chose de trop long ou compliqué. Environ 5 minutes de présentation, quoi.
-		\end{itemize}
-		}
-		
-		\partie{Attribution des protocoles}{
-		\begin{description}
-			\item[TCP] \gui
-			\item[UDP] \pal
-			\item[DNS] \cle
-			\item[ARP] \fel
-			\item[HTTP] \gus
-			\item[FTP] \pie
-			\item[IMPC] \fra 
-			\item[SSL] \ale
-		\end{description}
-		}
-		
-		\task[tout le groupe]{
-		Il s'agit d'installer Git pour pouvoir l'utiliser.
-		\begin{itemize}
-			\item Créer un compte sur \url{https://github.com/}
-			\item Sous \verb!linux!, installer \verb!git! : 
-			\verb!\textasciitilde \$ sudo apt-get install git!
-			
-			\item Sous \verb!Windows!, installer le logiciel \verb!SmartGit! : \url{http://www.syntevo.com/smartgit/}
-			
-			\item Lire la documentation de \verb!Git! : \\
-			\url{https://openclassrooms.com/courses/gerez-vos-codes-source-avec-git} \\
-			Elle est en \verb!.pdf! dans la suite de ce document.
-		\end{itemize}
-		}
-		
-		\semaine
-		
-		\obj{Envoyer et recevoir des paquets à partir d'un bout de code, en $C$ par exemple.}
-		
-		\task[tout le groupe]{
-		Pour les protocoles qui sont attribués, il s'agit d'écrire et exécuter un morceau de code qui permet d'envoyer ou de recevoir un paquet avec chacun de ces protocoles.
-		
-		Le but est surtout de pouvoir (1) contrôler le contenu de ce que l'on envoie et (2) extraire le contenu de ce que l'on reçoit, \acc{même si cela ne nous était pas adressé}.
-		}
-		
-		\partie{Attribution des protocoles par groupes}{
-		\begin{description}
-			\item[TCP,UDP] \cle{}, \fel{}, \ale{} 
-			\item[DNS,ARP] \pie{}, \fra{}, \pal{}
-			\item[HTTP,FTP] \gui{}, \gus{}
-		\end{description}
-		}
-		
-		\task[tout le groupe]{
-		Installer \verb!git! (sous linux) ou \verb!SmartGit! (sous Windows). Configurer le proxy dans le programme. Configurer vos serveurs \verb!dns! dans la configuration réseau : serveur principal \verb!heol! (129.104.201.53), serveur secondaire \verb!frankiz! (129.104.201.51). Cela pourra être utile.
-		}
-		
-		\Acc{Pensez à apporter vos ordis avec c\^ables éthernet.}
-		
-		
-		\semaine
-		
-		\obj{Utiliser WireShark pour collecter des données (à exploiter ensuite), et coder un sniffer.}
-		
-		\task[tout le groupe]{Chaque fois que vous êtes connectés au réseau Wi-Fi, utiliser WireShark pour écouter le réseau, et stocker toutes ces données. Pour chaque fichier, renommer le fichier de la façon suivante :
-		
-		\begin{center}
-		\verb!<mois><jour>-<heure de debut>-<heure de fin>.out!
-		\end{center}
-		
-		Cela donne par exemple, pour un fichier d'écoute le 1\up{er} novembre entre 8h32 et 15h08 : 
-		
-		\begin{center}
-		\verb!1101-0832-1508.out!
-		\end{center}
-		}
-		
-		\task[\pie,\pal,\ale,\fra,\gus]{
-		Coder (en python par exemple) un logiciel d'écoute de type WireShark permettant de \og capturer \fg{} les paquets échangés sur un réseau Wi-Fi. Le but est de les récupérer sous forme \og brute \fg{}.
-		}
-		
-		\task[\cle,\gui]{
-		Travailler sur le logiciel \verb!ettercap! et voir ce que l'on peut faire avec.
-		}
-		
-	\mois{Novembre}2
-	
-		\semaine
-		
-		\obj{Avancer dans le codage d'un sniffer qui doit savoir réagir à différents types de paquets}
-		
-		\task[\fra,\pie,\pal,\ale]{Travailler sur le codage en c++ : essayer de parvenir à quelque chose qui, à chaque réception de requête DNS, envoie un paquet DNS. Puis essayer de faire une réponse cohérente (typiquement : soit coder un relai DNS soit coder une réponse DNS constante quelque soit la requête).}
-		
-		\task[\gus,\fel,\cle,\gui]{Codage en python : travailler sur la réponse DNS et sur du sniff plus exhaustif pour essayer d'analyser les données.}	
-	
-		\semaine
-		
-		\obj{Être capable d'analyser les données collectées de façon empirique, avec des analyses statistiques, des analyses ciblant un ordinateur ou un protocole, etc. \acc{Il ne s'agit pas de décrypter} les informations reçues, mais de mettre en évidence la quantité d'informations que l'on peut obtenir à partir de ce qui est en clair.}
-		
-		\semaine
-		
-		\obj{\'Etudier le cryptage et décryptage, et démarrer le DNS poisoning.}
-		
-		\task{
-		\'Etudier de façon théorique le cryptage et décryptage (processus standards de cryptage, niveau de sécurité, méthodes de décryptage des fichiers cryptés avec un cryptage faible, etc.). Produire une fiche synthétisant toutes ces informations, et présenter les résultats au reste du groupe.
-		}
-		
-		\task{
-		Produire un bout de code qui permettrait, quand on reçoit une requête DNS, de répondre automatiquement un paquet DNS. Le but, ensuite, est de se faire passer pour le serveur DNS contacté par le quémandeur, et de contrôler le contenu de l'information émise.
-		}
+    \mois{Octobre}5
+        \semaine
+        
+        \obj{Chaque personne devra étudier un protocole, et préparer de quoi le présenter au reste du groupe. On préparera aussi l'utilisation de git.}
+        
+        \task[tout le groupe]{
+        \begin{itemize}
+            \item \'Etudier le protocole qui a été attribué.
+            \item Rédiger une fiche \Acc{courte mais complète} expliquant les points importants du protocole.
+            \item Présenter le protocole au groupe. Tous les moyens sont bons (tableau, diaporama, etc.), mais cela ne sert à rien de faire quelque chose de trop long ou compliqué. Environ 5 minutes de présentation, quoi.
+        \end{itemize}
+        }
+        
+        \partie{Attribution des protocoles}{
+        \begin{description}
+            \item[TCP] \gui
+            \item[UDP] \pal
+            \item[DNS] \cle
+            \item[ARP] \fel
+            \item[HTTP] \gus
+            \item[FTP] \pie
+            \item[IMPC] \fra
+            \item[SSL] \ale
+        \end{description}
+        }
+        
+        \task[tout le groupe]{
+        Il s'agit d'installer Git pour pouvoir l'utiliser.
+        \begin{itemize}
+            \item Créer un compte sur \url{https://github.com/}
+            \item Sous \verb!linux!, installer \verb!git!~:
+            \verb!\textasciitilde \$ sudo apt-get install git!
+            
+            \item Sous \verb!Windows!, installer le logiciel \verb!SmartGit!~: \url{http://www.syntevo.com/smartgit/}
+            
+            \item Lire la documentation de \verb!Git!~: \\
+            \url{https://openclassrooms.com/courses/gerez-vos-codes-source-avec-git} \\
+            Elle est en \verb!.pdf! dans la suite de ce document.
+        \end{itemize}
+        }
+        
+        \semaine
+        
+        \obj{Envoyer et recevoir des paquets à partir d'un bout de code, en $C$ par exemple.}
+        
+        \task[tout le groupe]{
+        Pour les protocoles qui sont attribués, il s'agit d'écrire et exécuter un morceau de code qui permet d'envoyer ou de recevoir un paquet avec chacun de ces protocoles.
+        
+        Le but est surtout de pouvoir (1) contrôler le contenu de ce que l'on envoie et (2) extraire le contenu de ce que l'on reçoit, \acc{même si cela ne nous était pas adressé}.
+        }
+        
+        \partie{Attribution des protocoles par groupes}{
+        \begin{description}
+            \item[TCP,UDP] \cle{}, \fel{}, \ale{}
+            \item[DNS,ARP] \pie{}, \fra{}, \pal{}
+            \item[HTTP,FTP] \gui{}, \gus{}
+        \end{description}
+        }
+        
+        \task[tout le groupe]{
+        Installer \verb!git! (sous linux) ou \verb!SmartGit! (sous Windows). Configurer le proxy dans le programme. Configurer vos serveurs \verb!dns! dans la configuration réseau~: serveur principal \verb!heol! (129.104.201.53), serveur secondaire \verb!frankiz! (129.104.201.51). Cela pourra être utile.
+        }
+        
+        \Acc{Pensez à apporter vos ordis avec c\^ables éthernet.}
+        
+        
+        \semaine
+        
+        \obj{Utiliser WireShark pour collecter des données (à exploiter ensuite), et coder un sniffer.}
+        
+        \task[tout le groupe]{Chaque fois que vous êtes connectés au réseau Wi-Fi, utiliser WireShark pour écouter le réseau, et stocker toutes ces données. Pour chaque fichier, renommer le fichier de la façon suivante~:
+        
+        \begin{center}
+        \verb!<mois><jour>-<heure de debut>-<heure de fin>.out!
+        \end{center}
+        
+        Cela donne par exemple, pour un fichier d'écoute le 1\up{er} novembre entre 8h32 et 15h08~:
+        
+        \begin{center}
+        \verb!1101-0832-1508.out!
+        \end{center}
+        }
+        
+        \task[\pie,\pal,\ale,\fra,\gus]{
+        Coder (en python par exemple) un logiciel d'écoute de type WireShark permettant de \og capturer \fg{} les paquets échangés sur un réseau Wi-Fi. Le but est de les récupérer sous forme \og brute \fg{}.
+        }
+        
+        \task[\cle,\gui]{
+        Travailler sur le logiciel \verb!ettercap! et voir ce que l'on peut faire avec.
+        }
+        
+    \mois{Novembre}2
+    
+        \semaine
+        
+        \obj{Avancer dans le codage d'un sniffer qui doit savoir réagir à différents types de paquets}
+        
+        \task[\fra,\pie,\pal,\ale]{Travailler sur le codage en c++~: essayer de parvenir à quelque chose qui, à chaque réception de requête DNS, envoie un paquet DNS. Puis essayer de faire une réponse cohérente (typiquement~: soit coder un relai DNS soit coder une réponse DNS constante quelque soit la requête).}
+        
+        \task[\gus,\fel,\cle,\gui]{Codage en python~: travailler sur la réponse DNS et sur du sniff plus exhaustif pour essayer d'analyser les données.}    
+    
+        \semaine
+        
+        \obj{Être capable d'analyser les données collectées de façon empirique, avec des analyses statistiques, des analyses ciblant un ordinateur ou un protocole, etc. \acc{Il ne s'agit pas de décrypter} les informations reçues, mais de mettre en évidence la quantité d'informations que l'on peut obtenir à partir de ce qui est en clair.}
+        
+        \semaine
+        
+        \obj{\'Etudier le cryptage et décryptage, et démarrer le DNS poisoning.}
+        
+        \task{
+        \'Etudier de façon théorique le cryptage et décryptage (processus standards de cryptage, niveau de sécurité, méthodes de décryptage des fichiers cryptés avec un cryptage faible, etc.). Produire une fiche synthétisant toutes ces informations, et présenter les résultats au reste du groupe.
+        }
+        
+        \task{
+        Produire un bout de code qui permettrait, quand on reçoit une requête DNS, de répondre automatiquement un paquet DNS. Le but, ensuite, est de se faire passer pour le serveur DNS contacté par le quémandeur, et de contrôler le contenu de l'information émise.
+        }
 
 \annee{2016}
-	\mois{Janvier}4
-		\semaine
-		
-		\obj{Préparer le rapport de mi-parcours. Améliorer la rapidité de réponse du programme ciblant TCP}
-		
-		\task[\gui, \fra]{
-		Faire un programme en C qui envoie automatiquement un paquet TCP FIN-SYN à chaque requête
-		}
-		
-		\task[le reste du groupe]{
-		Préparer le rapport
-		\begin{itemize}
-			\item Relire la proposition détaillée
-			\item Récupérer sur \verb!github! le répertoire \verb!Rapport-mi-parcours!
-			\item \'Etablir un plan
-			\item \'Ecrire =)
-		\end{itemize}
-		}
-		
-		\partie{Attribution des tâches}{
-		\begin{description}
-			\item[Rédacteur en chef] \ale{} 
-			\item[Respo mise en forme] \cle{}
-			\item[Plan et rédaction] \fel{}, \gus{}, \pie{}, \pal{}
-		\end{description}
-		
-		\ale{}, j'aimerai avoir une proposition de plan pour le 21 décembre. Donne-moi en même temps la répartition des parties.
-		}
-		
-		\task[tout le groupe]{
-		Passer de bonnes vacances, décompresser sans oublier totalement le PSC.
-		}
-		
-		\acc{A l'année prochaine :-)}
+    \mois{Janvier}4
+        \semaine
+        
+        \obj{Préparer le rapport de mi-parcours. Améliorer la rapidité de réponse du programme ciblant TCP}
+        
+        \task[\gui, \fra]{
+        Faire un programme en C qui envoie automatiquement un paquet TCP FIN-SYN à chaque requête
+        }
+        
+        \task[le reste du groupe]{
+        Préparer le rapport
+        \begin{itemize}
+            \item Relire la proposition détaillée
+            \item Récupérer sur \verb!github! le répertoire \verb!Rapport-mi-parcours!
+            \item \'Etablir un plan
+            \item \'Ecrire =)
+        \end{itemize}
+        }
+        
+        \partie{Attribution des tâches}{
+        \begin{description}
+            \item[Rédacteur en chef] \ale{}
+            \item[Respo mise en forme] \cle{}
+            \item[Plan et rédaction] \fel{}, \gus{}, \pie{}, \pal{}
+        \end{description}
+        
+        \ale{}, j'aimerais avoir une proposition de plan pour le 21 décembre. Donne-moi en même temps la répartition des parties.
+        }
+        
+        \task[tout le groupe]{
+        Passer de bonnes vacances, décompresser sans oublier totalement le PSC.
+        }
+        
+        \acc{A l'année prochaine~:-)}
+
+        \sautersemaine\sautersemaine
+
+        \semaine
+
+        \obj{Commencer une partie cruciale de la partie sécurisation. \Flash{Il est important que nous avancions vite sur cette partie, et que tout le monde fasse son boulot de ce côté. Les échéances arrivent très vite.}}
+
+        \task[\gus]{
+        Mettre en place un serveur DNS. Le but est d'avoir un serveur DNS qui tourne sous linux et nous permettra de faire nos tests tranquilou.
+        }
+
+        \task[\gui, \fra]{
+        Optimiser la rapidité du programme d'interruption TCP. Entre autres, cela passe par la réécriture en C.
+        }
+
+        \task[\pal, \fel, \ale]{
+        Être capable de faire une traceroute et une DNS request sur android. Cela veut dire qu'il faut une mini application android qui puisse faire une traceroute et une requête DNS.
+        }
+
+        \task[\cle, \pie]{
+        Travailler sur la communication sécurisée entre un serveur et un téléphone android~: comment faire, quel protocole utiliser pour que ce soit compatible avec android, etc.
+        }
+
 \end{document}
